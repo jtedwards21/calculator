@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 import { renderToString } from "react-dom/server";
-import App from "../public/javascripts/components/calculator"
+import Calculator from "../public/javascripts/components/calculator"
 import React from "react";
 
 var screen = "";

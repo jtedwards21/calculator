@@ -21541,7 +21541,6 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	//Change variables
 	var onChange = function onChange(screen) {
 	  _reactDom2.default.render(_react2.default.createElement(Calculator, { screen: screen }), document.getElementById("content"));
 	};
@@ -21585,15 +21584,15 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        "div",
-	        { className: "calculator-container" },
+	        { className: "calculator" },
 	        _react2.default.createElement(
 	          "div",
 	          { className: "button-row" },
 	          _react2.default.createElement(
 	            "div",
-	            { className: "output-cont" },
+	            { className: "output-container" },
 	            _react2.default.createElement(
-	              "span",
+	              "div",
 	              { id: "output" },
 	              this.props.screen
 	            )
@@ -21601,128 +21600,123 @@
 	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "button-row" },
+	          { id: "row-one", className: "btn-group" },
 	          "\u3000\u3000\u3000\u3000",
 	          _react2.default.createElement(
 	            "button",
-	            { id: "AC", className: "c-btn btn-lg btn btn-default", onClick: this.clear.bind(this) },
+	            { id: "AC", className: "btn-lg btn btn-default", onClick: this.clear.bind(this) },
 	            "AC"
 	          ),
 	          "\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000",
 	          _react2.default.createElement(
 	            "button",
-	            { id: "CE", className: "c-btn btn-lg btn btn-default", onClick: this.clear.bind(this) },
+	            { id: "CE", className: "btn-lg btn btn-default", onClick: this.clear.bind(this) },
 	            "CE"
 	          ),
-	          "\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000",
+	          "\u3000\u3000\u3000\u3000",
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn btn-lg btn-default", id: "%" },
-	            "%"
+	            { id: "eq", className: "round btn btn-lg btn-default", onClick: this.solve.bind(this) },
+	            "="
 	          ),
 	          "\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000",
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn btn-lg btn-default", onClick: this.input.bind(this), id: "/" },
+	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "/" },
 	            "/"
 	          ),
 	          "\u3000\u3000\u3000\u3000"
 	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "button-row" },
+	          { className: "btn-group" },
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn-lg btn btn-default", onClick: this.input.bind(this), id: "7" },
+	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "7" },
 	            "7"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn btn-lg btn-default", onClick: this.input.bind(this), id: "8" },
+	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "8" },
 	            "8"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn btn-lg btn-default", onClick: this.input.bind(this), id: "9" },
+	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "9" },
 	            "9"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn btn-lg btn-default", onClick: this.input.bind(this), id: "*" },
+	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "*" },
 	            "*"
 	          )
 	        ),
 	        "\u3000\u3000\u3000\u3000\u3000\u3000",
 	        _react2.default.createElement(
 	          "div",
-	          { className: "button-row" },
+	          { id: "row-three", className: "btn-group" },
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn-lg btn btn-default", onClick: this.input.bind(this), id: "4" },
+	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "4" },
 	            "4"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn-lg btn btn-default", onClick: this.input.bind(this), id: "5" },
+	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "5" },
 	            "5"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn-lg btn btn-default", onClick: this.input.bind(this), id: "6" },
+	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "6" },
 	            "6"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn-lg btn btn-default", onClick: this.input.bind(this), id: "-" },
+	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "-" },
 	            "-"
 	          )
 	        ),
 	        _react2.default.createElement(
 	          "div",
-	          { className: "button-row" },
+	          { className: "btn-group" },
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn-lg btn btn-default", onClick: this.input.bind(this), id: "1" },
+	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "1" },
 	            "1"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn-lg btn btn-default", onClick: this.input.bind(this), id: "2" },
+	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "2" },
 	            "2"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn btn-lg btn-default", onClick: this.input.bind(this), id: "3" },
+	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "3" },
 	            "3"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val bt btn-lg btn-default", onClick: this.input.bind(this), id: "+" },
+	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "+" },
 	            "+"
 	          )
 	        ),
 	        "\u3000\u3000\u3000\u3000\u3000 ",
 	        _react2.default.createElement(
 	          "div",
-	          { className: "button-row" },
+	          { className: "btn-group" },
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn btn-lg btn-default", onClick: this.input.bind(this), id: "0" },
+	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "0" },
 	            "0"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "c-btn val btn btn-lg btn-default", onClick: this.input.bind(this), id: "." },
+	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "." },
 	            "."
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { id: "eq", className: "c-btn btn btn-lg btn-default", onClick: this.solve.bind(this) },
-	            "="
-	          ),
-	          _react2.default.createElement(
-	            "button",
-	            { id: "N/A", className: "c-btn btn-lg btn btn-default" },
+	            { id: "N/A", className: "btn-lg btn btn-default" },
 	            "N/A"
 	          )
 	        )
@@ -21731,7 +21725,7 @@
 	  }]);
 
 	  return Calculator;
-	}(_react2.default.Component());
+	}(_react2.default.Component);
 
 	exports.default = Calculator;
 
