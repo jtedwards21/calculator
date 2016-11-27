@@ -1,8 +1,18 @@
 body {
-  padding: 50px;
+  padding: 500px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #83A5A6;
 }
 
-a {
-  color: #00B7FF;
+.calculator {
+  background-color:#CAFDFF;
+  border-radius:
 }
+
+.calculator-container {
+  background-color:black;
+  border-radius: 16px;
+ 　box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.32), 0 3px 12px 0 rgba(0, 0, 0, 0.24);
+}
+
+
