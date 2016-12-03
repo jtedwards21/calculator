@@ -5,11 +5,10 @@ import { renderToString } from "react-dom/server";
 import Calculator from "../public/javascripts/components/calculator"
 import React from "react";
 
-var screen = "";
 
 /* GET home page. */
 router.get("/", function(req, res) {
-  const markup = renderToString(<Calculator screen={screen} />);
+  const markup = renderToString(<Calculator />);
 
   res.render("index", {
     title: "Express",

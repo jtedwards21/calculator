@@ -1,5 +1,19 @@
+@font-face {
+  font-family: Jambo;
+  font-style: normal;
+  font-weight: normal;
+  src: url("Jambo.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Denominator;
+  font-style: normal;
+  font-weight: normal;
+  src: url("Denominator.ttf") format('truetype');
+}
+
 body {
-  padding: 500px;
+  margin: 0 auto;
   padding-top: 0px;
   padding-bottom: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -11,24 +25,65 @@ body {
   margin-right: 15px;
 }
 
+.calc-title {
+  font-size: 2em;
+　　font-family: Jambo;
+  text-align: center;
+  margin-top: 4%;
+}
+
+#content {
+margin-top: 8%;
+width: 250px;
+float: none;
+margin-left: auto;
+margin-right:auto;
+}
+
 .calculator {
-  background-color: white;
+  background-color: #192A40;
   border-radius: 16px;
   width: 250px;
   padding-bottom: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.32), 0 3px 12px 0 rgba(0, 0, 0, 0.54);
 }
 
-#output {
-  background-color: black;
+.blue-btn {
+  background: #c5cdd6; /* Old browsers */
+background: -moz-linear-gradient(top, #c5cdd6 0%, #b8c4d3 18%, #96b4d9 30%, #79a4d8 62%, #4e8cd8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #c5cdd6 0%,#b8c4d3 18%,#96b4d9 30%,#79a4d8 62%,#4e8cd8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #c5cdd6 0%,#b8c4d3 18%,#96b4d9 30%,#79a4d8 62%,#4e8cd8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5cdd6', endColorstr='#4e8cd8',GradientType=0 );
+}
+
+#top {
+  background-color: #83A5A6;
   height: 20px;
-  width: 100%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
   border-top-left-radius: 100px 10px;
   border-top-right-radius: 100px 10px;
 }
 
-.output-container {
+.output {
+  background-color: black;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #83A5A6;
+  color: white;
+  text-align: right;
+  font-size: 3em;
+  font-family: Denominator;
+  margin-top: 5px;
+}
+
+.top-container {
   padding: 5px;
   border-radius: 16px;
+  width: 100%;
 }
 
 .btn-group {
@@ -63,10 +118,6 @@ body {
   padding-right: 10px;
 }
 
-
-.output-container {
-  width: 100%;
-}
 
 
 

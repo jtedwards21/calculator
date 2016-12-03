@@ -60,9 +60,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var screen = "";
-
-	_reactDom2.default.render(_react2.default.createElement(_calculator2.default, { screen: screen }), document.getElementById("content"));
+	_reactDom2.default.render(_react2.default.createElement(_calculator2.default, null), document.getElementById("content"));
 
 /***/ },
 /* 1 */
@@ -21529,10 +21527,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(32);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21540,10 +21534,6 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var onChange = function onChange(screen) {
-	  _reactDom2.default.render(_react2.default.createElement(Calculator, { screen: screen }), document.getElementById("content"));
-	};
 
 	var Calculator = function (_React$Component) {
 	  _inherits(Calculator, _React$Component);
@@ -21553,9 +21543,9 @@
 
 	    var _this = _possibleConstructorReturn(this, (Calculator.__proto__ || Object.getPrototypeOf(Calculator)).call(this));
 
-	    _this.state = {};
-
-	    _this.screen = "";
+	    _this.state = {
+	      screen: "0"
+	    };
 
 	    return _this;
 	  }
@@ -21564,15 +21554,14 @@
 	    key: "input",
 	    value: function input(e) {
 	      var char = e.target.id;
-	      var screen = this.props.screen;
+	      var screen = this.state.screen;
 	      screen = screen + char;
-	      onChange(screen);
+	      this.setState({ screen: screen });
 	    }
 	  }, {
 	    key: "clear",
 	    value: function clear(e) {
-	      var screen = "0";
-	      onChange(screen);
+	      this.setState({ screen: "0" });
 	    }
 	  }, {
 	    key: "solve",
@@ -21590,13 +21579,14 @@
 	          { className: "button-row" },
 	          _react2.default.createElement(
 	            "div",
-	            { className: "output-container" },
-	            _react2.default.createElement(
-	              "div",
-	              { id: "output" },
-	              this.props.screen
-	            )
+	            { className: "top-container" },
+	            _react2.default.createElement("div", { id: "top" })
 	          )
+	        ),
+	        _react2.default.createElement(
+	          "div",
+	          { className: "output" },
+	          this.state.screen
 	        ),
 	        _react2.default.createElement(
 	          "div",
@@ -21604,25 +21594,25 @@
 	          "\u3000\u3000\u3000\u3000",
 	          _react2.default.createElement(
 	            "button",
-	            { id: "AC", className: "btn-lg btn btn-default", onClick: this.clear.bind(this) },
+	            { id: "AC", className: "btn-lg btn blue-btn", onClick: this.clear.bind(this) },
 	            "AC"
 	          ),
 	          "\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000",
 	          _react2.default.createElement(
 	            "button",
-	            { id: "CE", className: "btn-lg btn btn-default", onClick: this.clear.bind(this) },
+	            { id: "CE", className: "btn-lg btn blue-btn", onClick: this.clear.bind(this) },
 	            "CE"
 	          ),
 	          "\u3000\u3000\u3000\u3000",
 	          _react2.default.createElement(
 	            "button",
-	            { id: "eq", className: "round btn btn-lg btn-default", onClick: this.solve.bind(this) },
+	            { id: "eq", className: "round btn btn-lg blue-btn", onClick: this.solve.bind(this) },
 	            "="
 	          ),
 	          "\u3000\u3000\u3000\u3000\u3000\u3000\u3000\u3000",
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "/" },
+	            { className: "round btn btn-lg blue-btn", onClick: this.input.bind(this), id: "/" },
 	            "/"
 	          ),
 	          "\u3000\u3000\u3000\u3000"
@@ -21632,22 +21622,22 @@
 	          { className: "btn-group" },
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "7" },
+	            { className: "round btn-lg btn blue-btn", onClick: this.input.bind(this), id: "7" },
 	            "7"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "8" },
+	            { className: "round btn btn-lg blue-btn", onClick: this.input.bind(this), id: "8" },
 	            "8"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "9" },
+	            { className: "round btn btn-lg blue-btn", onClick: this.input.bind(this), id: "9" },
 	            "9"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "*" },
+	            { className: "round btn btn-lg blue-btn", onClick: this.input.bind(this), id: "*" },
 	            "*"
 	          )
 	        ),
@@ -21657,22 +21647,22 @@
 	          { id: "row-three", className: "btn-group" },
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "4" },
+	            { className: "round btn-lg btn blue-btn", onClick: this.input.bind(this), id: "4" },
 	            "4"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "5" },
+	            { className: "round btn-lg btn blue-btn", onClick: this.input.bind(this), id: "5" },
 	            "5"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "6" },
+	            { className: "round btn-lg btn blue-btn", onClick: this.input.bind(this), id: "6" },
 	            "6"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "-" },
+	            { className: "round btn-lg btn blue-btn", onClick: this.input.bind(this), id: "-" },
 	            "-"
 	          )
 	        ),
@@ -21681,22 +21671,22 @@
 	          { className: "btn-group" },
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "1" },
+	            { className: "round btn-lg btn blue-btn", onClick: this.input.bind(this), id: "1" },
 	            "1"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn-lg btn btn-default", onClick: this.input.bind(this), id: "2" },
+	            { className: "round btn-lg btn blue-btn", onClick: this.input.bind(this), id: "2" },
 	            "2"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "3" },
+	            { className: "round btn btn-lg blue-btn", onClick: this.input.bind(this), id: "3" },
 	            "3"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "+" },
+	            { className: "round btn btn-lg blue-btn", onClick: this.input.bind(this), id: "+" },
 	            "+"
 	          )
 	        ),
@@ -21706,17 +21696,17 @@
 	          { className: "btn-group" },
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "0" },
+	            { className: "round btn btn-lg blue-btn", onClick: this.input.bind(this), id: "0" },
 	            "0"
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { className: "round btn btn-lg btn-default", onClick: this.input.bind(this), id: "." },
+	            { className: "round btn btn-lg blue-btn", onClick: this.input.bind(this), id: "." },
 	            "."
 	          ),
 	          _react2.default.createElement(
 	            "button",
-	            { id: "N/A", className: "btn-lg btn btn-default" },
+	            { id: "N/A", className: "btn-lg btn blue-btn" },
 	            "N/A"
 	          )
 	        )
