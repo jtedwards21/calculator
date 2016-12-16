@@ -21556,6 +21556,11 @@
 	      var char = e.target.id;
 	      var screen = this.state.screen;
 	      screen = screen + char;
+	      if (screen.length > 1 && screen[0] == "0") {
+	        if (screen[1] !== ".") {
+	          screen = screen.substring(1);
+	        }
+	      }
 	      this.setState({ screen: screen });
 	    }
 	  }, {
@@ -21567,6 +21572,9 @@
 	    key: "solve",
 	    value: function solve() {
 	      console.log('solve');
+	      var e = eval(this.state.screen);
+	      //Solve equations for three parts
+	      this.setState({ screen: e });
 	    }
 	  }, {
 	    key: "render",
