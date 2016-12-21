@@ -20,6 +20,11 @@ a {
   color: black;
 }
 
+#link-container {
+  position: fixed;
+  top: 95vh;
+}
+
 #github-container{
   height: 50px;
   margin-left: auto;
@@ -33,6 +38,7 @@ a {
   line-height: 25px;
   font-family: Denominator;
   font-size: 1.5em;
+  display: inline;
 }
 
 body {
